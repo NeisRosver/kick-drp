@@ -48,12 +48,6 @@ pub fn init_logger(app: &AppHandle) -> Result<(), String> {
 }
 
 #[tauri::command]
-pub fn get_log_path(app: AppHandle) -> Result<String, String> {
-    let path = logs_dir(&app)?.join("latest.log");
-    Ok(path.display().to_string())
-}
-
-#[tauri::command]
 pub fn frontend_log(level: String, target: String, message: String) -> Result<(), String> {
     let target = if target.trim().is_empty() {
         "react".to_string()
