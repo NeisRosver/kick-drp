@@ -3,9 +3,9 @@
 
 body {
     @apply text-white min-h-screen w-full overflow-y-hidden;
-    /* -moz-user-select: none;
+    -moz-user-select: none;
     -webkit-user-select: none;
-    -ms-user-select: none; */
+    -ms-user-select: none;
     background: radial-gradient(circle at top left, rgba(83, 252, 24, 0.12), transparent 35%),
                 radial-gradient(circle at bottom right, rgba(0, 180, 255, 0.08), transparent 35%),
                 #0d1015;
