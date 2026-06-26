@@ -87,7 +87,7 @@ Save the configuration and start Rich Presence.
 
 ## Screenshots
 
-Screenshots will be added soon.
+![Screenshot of home tab](https://raw.githubusercontent.com/NeisRosver/kick-drp/refs/heads/main/public/screenshot.png)
 
 ## Roadmap
 
