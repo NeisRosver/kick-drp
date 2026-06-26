@@ -73,6 +73,8 @@ Launch the application and configure:
 
 * **Channel** – Your Kick channel name.
 * **Discord Client ID** – Your Discord application Client ID.
+* **Kick Client ID** - Your Kick application Client ID.
+* **Kick Client Secret** - Your Kick application Client Secret.
 
 Save the configuration and start Rich Presence.
 
@@ -88,14 +90,6 @@ Save the configuration and start Rich Presence.
 ## Screenshots
 
 ![Screenshot of home tab](https://raw.githubusercontent.com/NeisRosver/kick-drp/refs/heads/main/public/screenshot.png)
-
-## Roadmap
-
-* Custom Rich Presence themes
-* More configurable refresh intervals
-* Automatic update notifications
-* Multi-channel support
-* Localization
 
 ## Contributing
 
