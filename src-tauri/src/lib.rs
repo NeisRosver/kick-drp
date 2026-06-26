@@ -5,6 +5,7 @@ use mods::discord::DiscordPresence;
 use mods::settings::{get_settings, save_settings};
 use serde::Deserialize;
 use mods::kick::get_kick_stream;
+use mods::logger::frontend_log;
 
 #[derive(Debug, Deserialize)]
 struct StreamPresencePayload {
@@ -107,6 +108,7 @@ pub fn run() {
             get_settings,
             save_settings,
             get_kick_stream,
+            frontend_log,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
