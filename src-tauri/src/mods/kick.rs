@@ -9,7 +9,6 @@ const KICK_API_BASE_URL: &str = "https://api.kick.com/public/v1";
 #[derive(Debug, Clone, Deserialize)]
 struct KickTokenResponse {
     access_token: String,
-    token_type: Option<String>,
     expires_in: Option<u64>,
 }
 
@@ -43,9 +42,7 @@ struct KickChannel {
 
 #[derive(Debug, Deserialize)]
 struct KickCategory {
-    id: Option<u64>,
     name: Option<String>,
-    thumbnail: Option<String>,
 }
 
 #[derive(Debug, Deserialize)]
