@@ -251,6 +251,10 @@ impl DiscordPresence {
             .filter(|u| !u.trim().is_empty())
             .map(|u| u.to_string());
 
+        let watch_url = stream_url
+            .clone()
+            .unwrap_or_else(|| format!("https://kick.com/{}", channel_name.trim()));
+
         let raw_thumbnail = stream_thumbnail
             .filter(|thumbnail| !thumbnail.trim().is_empty())
             .map(|thumbnail| thumbnail.to_string());
@@ -287,7 +291,7 @@ impl DiscordPresence {
 
         client
             .set_activity(|activity| {
-                let mut activity = activity
+                activity
                     .details(details.clone())
                     .state(state.clone())
                     .status_display(DisplayType::Details)
@@ -298,13 +302,12 @@ impl DiscordPresence {
                             .small_text("Live on Kick")
                             .large_image(large_image.clone())
                             .large_text(category_text.clone())
-                    });
-
-                if let Some(url) = stream_url.clone() {
-                    activity = activity.append_buttons(|button| button.label("Watch Stream").url(url));
-                }
-
-                activity
+                    })
+                    .append_buttons(|button| {
+                        button
+                            .label("Watch Stream")
+                            .url(watch_url.clone())
+                    })
             })
             .map_err(|e| {
                 log::error!(target: "discord", "Failed to set Discord activity: {e}");

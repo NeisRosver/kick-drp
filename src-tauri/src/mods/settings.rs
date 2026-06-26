@@ -151,9 +151,3 @@ pub fn save_settings(app: AppHandle, settings: AppSettings) -> Result<AppSetting
     save_settings_file(&app, &normalized_settings)?;
     Ok(normalized_settings)
 }
-
-#[tauri::command]
-pub fn get_settings_path(app: AppHandle) -> Result<String, String> {
-    let path = settings_path(&app)?;
-    Ok(path.display().to_string())
-}
